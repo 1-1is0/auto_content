@@ -1,0 +1,13 @@
+data/
+test
+mongodb/
+__pycache__
+captcha.png
+.vscode
+geckodriver
+geckodriver.log
+captcha/
+pdfs/
+*.session
+
+.env

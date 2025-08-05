@@ -1,0 +1,28 @@
+services:
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    ports:
+      - 27018:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./volumes/mongodb:/data/db
+
+  sleniumn:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - 4444:4444
+    volumes:
+      - ./volumes/downloads:/downlodas
+    environment:
+      SE_START_XVFB: false
+
+# avoid collision with class B uni private network
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.4.0.0/24
