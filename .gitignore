@@ -11,3 +11,5 @@ pdfs/
 *.session
 
 .env
+database/*.csv
+database/*.yaml
