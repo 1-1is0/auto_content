@@ -13,3 +13,6 @@ pdfs/
 .env
 database/*.csv
 database/*.yaml
+database/*.html
+database/*.json
+database/*.txt
